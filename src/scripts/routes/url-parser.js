@@ -1,7 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-dupe-keys */
-/* eslint-disable no-underscore-dangle */
-
 const UrlParser = {
   parseActiveUrlWithCombiner() {
     const url = window.location.hash.slice(1).toLowerCase();
@@ -9,7 +5,7 @@ const UrlParser = {
     return this._urlCombiner(splitedUrl);
   },
 
-  parseActiveUrlWithCombiner() {
+  parseActiveUrlWithoutCombiner() {
     const url = window.location.hash.slice(1).toLowerCase();
     return this._urlSplitter(url);
   },
@@ -25,8 +21,8 @@ const UrlParser = {
 
   _urlCombiner(splitedUrl) {
     return (splitedUrl.resource ? `/${splitedUrl.resource}` : '/')
-    + (splitedUrl.id ? '/:id' : '')
-    + (splitedUrl.verb ? `/${splitedUrl.verb}` : '');
+      + (splitedUrl.id ? '/:id' : '')
+      + (splitedUrl.verb ? `/${splitedUrl.verb}` : '');
   },
 };
 
